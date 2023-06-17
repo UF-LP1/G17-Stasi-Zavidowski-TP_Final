@@ -140,6 +140,7 @@
     <ClInclude Include="cPiezaOrtopedica.h" />
     <ClInclude Include="cPiezaQui.h" />
     <ClInclude Include="cRegistrosANPA.h" />
+    <ClInclude Include="simulacion.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="cANPA.cpp" />
@@ -153,6 +154,7 @@
     <ClCompile Include="cPiezaQui.cpp" />
     <ClCompile Include="cRegistrosANPA.cpp" />
     <ClCompile Include="cVector.cpp" />
+    <ClCompile Include="simulacion.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

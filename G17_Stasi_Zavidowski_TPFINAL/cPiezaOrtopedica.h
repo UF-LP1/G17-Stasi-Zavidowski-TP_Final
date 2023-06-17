@@ -10,6 +10,7 @@ public:
 
 	float get_dimensiones();
 	time_t get_fechafabricacion();
+	materiales get_tipomaterial();
     string to_string();
 	void imprimir();
 	int get_cod();

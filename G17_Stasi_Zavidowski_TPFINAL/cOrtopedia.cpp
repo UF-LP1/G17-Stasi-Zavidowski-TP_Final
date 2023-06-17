@@ -19,6 +19,11 @@ string cOrtopedia::get_direccion()
 	return string();
 }
 
+vector<cPiezaOrtopedica>& cOrtopedia::get_listaprotesis()
+{
+	return ListaProtesis;
+}
+
 string cOrtopedia::to_string()
 {
 	return string();

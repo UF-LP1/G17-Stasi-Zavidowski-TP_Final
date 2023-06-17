@@ -23,6 +23,11 @@ time_t cPiezaOrtopedica::get_fechafabricacion()
 	return time_t();
 }
 
+materiales cPiezaOrtopedica::get_tipomaterial()
+{
+	return materiales();
+}
+
 string cPiezaOrtopedica::to_string()
 {
 	return string();
@@ -36,3 +41,4 @@ int cPiezaOrtopedica::get_cod()
 {
 	return 0;
 }
+

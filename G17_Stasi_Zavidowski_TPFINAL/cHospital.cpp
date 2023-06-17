@@ -1,6 +1,6 @@
 #include "cHospital.h"
 
-cHospital::cHospital(string nombre_, string direccion_, string espcialidad_, vector<cMedico> medicos_, vector<cPaciente> pacientes_): nombre(nombre_), direccion(direccion_), medicos(medicos_), pacientes(pacientes_)
+cHospital::cHospital(string nombre_, string direccion_, string espcialidad_, vector<cMedico> medicos_): nombre(nombre_), direccion(direccion_), medicos(medicos_)
 {
 	this->especialidad = espcialidad_;
 }
@@ -32,4 +32,9 @@ string cHospital::to_string()
 
 void cHospital::imprimir()
 {
+}
+
+cPaciente cHospital::buscar_pacienprotesis(cPaciente p, cPiezaOrtopedica pieza)
+{
+	
 }

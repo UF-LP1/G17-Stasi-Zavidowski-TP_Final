@@ -11,6 +11,7 @@ public:
 
 	string get_nombre();
 	string get_direccion();
+	vector<cPiezaOrtopedica>& get_listaprotesis();
 	string to_string();
 	void imprimir();
 

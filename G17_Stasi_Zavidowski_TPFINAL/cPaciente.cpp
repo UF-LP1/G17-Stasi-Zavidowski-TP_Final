@@ -1,10 +1,11 @@
 #include "cPaciente.h"
 
-cPaciente::cPaciente(string nombre_, string apellido_, string Fnacimiento, string telefono, string alergias, cHospital hospital, float RadioMiembroAmp, int codigopaciente_): nombre(nombre_), apellido(apellido_), Fnacimiento(Fnacimiento), hospital(hospital), codigopaciente(codigopaciente_)
+cPaciente::cPaciente(string nombre_, string apellido_, string Fnacimiento, string telefono, enum materiales alergias, float RadioMiembroAmp, int codigoprotesis_): nombre(nombre_), apellido(apellido_), Fnacimiento(Fnacimiento), alergias(alergias)
 {
 	this->telefono = telefono;
-	this->alergias = alergias;
 	this->RadioMiembroAmp = RadioMiembroAmp;
+	this->codigoprotesis = 0;
+
 
 }
 
@@ -37,6 +38,11 @@ float cPaciente::get_radiomiembroamp()
 	return 0.0f;
 }
 
+materiales cPaciente::get_alergias()
+{
+	return materiales();
+}
+
 string cPaciente::to_string()
 {
 	return string();
@@ -48,5 +54,9 @@ void cPaciente::imprimir()
 
 int cPaciente::get_codigo()
 {
-	return 0;
+	return codigoprotesis;
+}
+
+void cPaciente::set_codigo(int cod)
+{
 }
