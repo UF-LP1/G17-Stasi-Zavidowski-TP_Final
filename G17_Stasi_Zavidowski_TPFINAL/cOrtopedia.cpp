@@ -21,7 +21,7 @@ string cOrtopedia::get_direccion()
 
 vector<cPiezaOrtopedica>& cOrtopedia::get_listaprotesis()
 {
-	return ListaProtesis;
+	return this->ListaProtesis;
 }
 
 string cOrtopedia::to_string()

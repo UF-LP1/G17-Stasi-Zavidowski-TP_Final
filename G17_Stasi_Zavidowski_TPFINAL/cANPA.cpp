@@ -23,3 +23,8 @@ cVector<cOrtopedia>& cANPA::get_listatodasortopedias() //& para que retorne la r
 	return listatodasortopedias;
 }
 
+cVector<cFabricante>& cANPA::get_listafabricantes()
+{
+	return listafabricantes;
+}
+

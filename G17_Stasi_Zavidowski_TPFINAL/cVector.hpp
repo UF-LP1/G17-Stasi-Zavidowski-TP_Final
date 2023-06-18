@@ -22,8 +22,3 @@ inline void cVector<T>::operator-(T element)
 	this->erase(element);
 }
 
-template<class T>
-inline void cVector<T>::operator==(T element)
-{
-
-}

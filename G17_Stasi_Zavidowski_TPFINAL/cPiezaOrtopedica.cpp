@@ -9,6 +9,10 @@ cPiezaOrtopedica::cPiezaOrtopedica(float dimensiones_, materiales tipomaterial_,
 	this->codprotesis = codprotesis_;
 }
 
+cPiezaOrtopedica::cPiezaOrtopedica()
+{
+}
+
 cPiezaOrtopedica::~cPiezaOrtopedica()
 {
 }

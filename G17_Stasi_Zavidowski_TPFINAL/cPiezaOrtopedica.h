@@ -6,6 +6,7 @@ class cPiezaOrtopedica
 {
 public:
 	cPiezaOrtopedica(float dimensiones_, materiales tipomaterial_, time_t fechafabricacion_, cFabricante fabricante_, Tipodepieza tipopieza_, int codprotesis_);
+	cPiezaOrtopedica();
 	~cPiezaOrtopedica();
 
 	float get_dimensiones();

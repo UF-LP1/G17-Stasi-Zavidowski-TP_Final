@@ -24,6 +24,11 @@ int cFabricante::get_numhabilitaion()
 	return 0;
 }
 
+std::vector <cPiezaOrtopedica>& cFabricante::get_listaprotesisrealizadas()
+{
+	return Listaprotesisfabricadas;
+}
+
 void cFabricante::solicitudes(string requisitos)
 {
 }

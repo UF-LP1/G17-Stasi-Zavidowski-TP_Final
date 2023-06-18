@@ -34,7 +34,14 @@ void cHospital::imprimir()
 {
 }
 
-cPaciente cHospital::buscar_pacienprotesis(cPaciente p, cPiezaOrtopedica pieza)
+cPaciente cHospital::buscar_pacienprotesis(cPiezaOrtopedica pieza)
 {
-	
+	for (int i = 0; i < medicos.size(); i++) {
+		vector<cPaciente> listapacientes = medicos[i].get_listapac();
+		for (int j = 0; j < listapacientes.size(); j++)
+		{
+			if (listapacientes[j].get_cod() == pieza.get_cod())
+				return listapacientes[j];
+		}
+	}
 }

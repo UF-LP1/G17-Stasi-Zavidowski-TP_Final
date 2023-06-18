@@ -16,14 +16,14 @@ public:
 	string get_especialidad();
 	string to_string();
 	void imprimir();
-	cPaciente buscar_pacienprotesis(cPaciente p, cPiezaOrtopedica pieza);
+	cPaciente buscar_pacienprotesis(cPiezaOrtopedica pieza);
 
 
 private:
 	const string nombre;
 	const string direccion;
     string especialidad;
-	vector <cMedico> medicos;
+	std::vector <cMedico> medicos;
 	
 
 };

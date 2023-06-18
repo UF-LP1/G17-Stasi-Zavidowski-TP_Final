@@ -4,6 +4,7 @@
 #include "cHospital.h"
 #include "cPaciente.h"
 #include "cVector.hpp"
+#include "cFabricante.h"
 #include <vector>
 class cANPA
 {
@@ -11,15 +12,14 @@ public:
 	cANPA(cVector <cRegistrosANPA> listaregistros_);
 	~cANPA();
 
-	cPiezaOrtopedica buscar_protesis(cPiezaOrtopedica pieza, int codprotesis);
-	cPaciente buscar_pacienprotesis(cPiezaOrtopedica pieza);
 	string to_string();
 	void imprimir();
-	cVector<cOrtopedia>& get_listatodasortopedias();
+	static cVector<cOrtopedia>& get_listatodasortopedias();
+	cVector<cFabricante>& get_listafabricantes();
 
 private:
 	cVector <cRegistrosANPA> listaregistros;
-	cVector <cOrtopedia> listatodasortopedias;
-
+	static cVector <cOrtopedia> listatodasortopedias;
+	cVector <cFabricante> listafabricantes;
 };
 

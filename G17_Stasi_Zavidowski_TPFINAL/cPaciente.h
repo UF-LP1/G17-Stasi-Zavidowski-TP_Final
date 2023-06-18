@@ -14,6 +14,7 @@ public:
 	string get_telefono();
 	float get_radiomiembroamp();
 	materiales get_alergias();
+	int get_cod();
 	string to_string();
 	void imprimir();
 	int get_codigo();

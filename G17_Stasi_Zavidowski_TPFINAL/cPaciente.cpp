@@ -43,6 +43,11 @@ materiales cPaciente::get_alergias()
 	return materiales();
 }
 
+int cPaciente::get_cod()
+{
+	return codigoprotesis;
+}
+
 string cPaciente::to_string()
 {
 	return string();
