@@ -55,6 +55,7 @@ cPiezaOrtopedica cMedico::buscarprotesis()
 			{
 				listapacientes[i].set_codigo(listaprotesis[j].get_cod());// le guardo el codigo de la protesis que le voy a poner al paceinte, osea si su codigo != 0, ya tiene protesis
 				aux = listaprotesis[j].get_cod();
+				cPiezaOrtopedica::restarStock();
 				return listaprotesis[j]; 
 			}
 		}
@@ -66,14 +67,14 @@ cPiezaOrtopedica cMedico::buscarprotesis()
 		aux = encontrada.get_cod();
 	}
 	if (aux == 0) {
-		cPiezaOrtopedica protesisfabricada = llamarfabricante(cFabricante::get_listaprotesisrealizadas());
+		cPiezaOrtopedica protesisfabricada = llamarfabricante(cANPA::get_listafabricantes());
 		return protesisfabricada;
 		aux = protesisfabricada.get_cod();
 	}
 	return  ;
 }
 
-cPiezaOrtopedica cMedico::llamarANPA(cVector <cOrtopedia> listatodasortopedias)
+cPiezaOrtopedica cMedico::llamarANPA(std::vector <cOrtopedia> listatodasortopedias)
 {
 	cPiezaOrtopedica objvacio;
 
@@ -95,7 +96,7 @@ cPiezaOrtopedica cMedico::llamarANPA(cVector <cOrtopedia> listatodasortopedias)
 	return objvacio;
 }
 
-	cPiezaOrtopedica cMedico::llamarfabricante(cVector <cFabricante> listafabricantes)
+	cPiezaOrtopedica cMedico::llamarfabricante(std::vector <cFabricante> listafabricantes)
 	{
 		cPiezaOrtopedica objnulo;
 		for (int i = 0; i < listafabricantes.size(); i++) {
@@ -115,7 +116,7 @@ cPiezaOrtopedica cMedico::llamarANPA(cVector <cOrtopedia> listatodasortopedias)
 		}
 		return objnulo;
 	}
-	bool operator==(cPaciente& pac, cPiezaOrtopedica& prot)
+	bool operator==(cPaciente& pac, cPiezaOrtopedica& prot)// agregar dynamic cast
 	{
 		bool esta = false;
 		if (pac.get_radiomiembroamp() == prot.get_dimensiones() && pac.get_alergias() != prot.get_tipomaterial())

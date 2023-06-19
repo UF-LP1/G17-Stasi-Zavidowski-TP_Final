@@ -19,9 +19,9 @@ public:
 	string to_string();
 	void imprimir();
 	cPiezaOrtopedica buscarprotesis();
-	cPiezaOrtopedica llamarANPA(cVector <cOrtopedia> lista);
+	cPiezaOrtopedica llamarANPA(std::vector <cOrtopedia> lista);
 
-	cPiezaOrtopedica llamarfabricante(cVector<cFabricante> listafabricantes);
+	cPiezaOrtopedica llamarfabricante(std::vector<cFabricante> listafabricantes);
 
 private:
 	const string nombre;

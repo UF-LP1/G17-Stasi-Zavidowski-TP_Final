@@ -15,11 +15,11 @@ public:
 	string to_string();
 	void imprimir();
 	static cVector<cOrtopedia>& get_listatodasortopedias();
-	cVector<cFabricante>& get_listafabricantes();
+	static cVector<cFabricante>& get_listafabricantes();
 
 private:
 	cVector <cRegistrosANPA> listaregistros;
 	static cVector <cOrtopedia> listatodasortopedias;
-	cVector <cFabricante> listafabricantes;
+	static cVector <cFabricante> listafabricantes;
 };
 
