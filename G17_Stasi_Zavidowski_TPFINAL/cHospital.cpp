@@ -36,6 +36,7 @@ string cHospital::to_string()
 
 void cHospital::imprimir()
 {
+	cout << this->to_string() << endl;
 }
 
 
@@ -49,5 +50,5 @@ cPaciente* cHospital::buscar_pacienprotesis(int codigoprotesis)
 				return &listapacientes[j];
 		}
 	}
-	return nullptr;
+	return;
 }

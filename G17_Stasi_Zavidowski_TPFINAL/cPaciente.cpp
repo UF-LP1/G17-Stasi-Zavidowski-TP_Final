@@ -1,4 +1,5 @@
 #include "cPaciente.h"
+#include <iostream>
 
 cPaciente::cPaciente(string nombre_, string apellido_, string Fnacimiento, string telefono, enum materiales alergias, float RadioMiembroAmp, int codigoprotesis_): nombre(nombre_), apellido(apellido_), Fnacimiento(Fnacimiento), alergias(alergias)
 {
@@ -23,7 +24,7 @@ string cPaciente::get_apellido()
 	return apellido;
 }
 
-time_t cPaciente::get_fnacimiento()
+string cPaciente::get_fnacimiento()
 {
 	return Fnacimiento;
 }
@@ -52,12 +53,13 @@ string cPaciente::to_string()
 {
 	stringstream salida;
 	char coma = ',';
-	salida << "El telefono es:" << this->telefono << coma << "El radio del miembro amputado es:" << this->RadioMiembroAmp << coma << "El codigo de la protesis es:" << this->codigoprotesis << endl;
+	salida << "El telefono es:" << this->telefono << coma << "El radio del miembro amputado es:" << this->RadioMiembroAmp << coma << "El codigo de la protesis es:" << this->codigoprotesis << 
 	return salida.str();
 }
 
 void cPaciente::imprimir()
 {
+	cout << this->to_string() << endl;
 }
 
 int cPaciente::get_codigo()

@@ -7,6 +7,7 @@ cFabricante::cFabricante(string nombre_, string direccion_, int numhabilitacion_
 
 cFabricante::cFabricante()
 {
+
 }
 
 cFabricante::~cFabricante()
@@ -28,7 +29,7 @@ int cFabricante::get_numhabilitaion()
 	return 0;
 }
 
-std::vector <cPiezaOrtopedica>& cFabricante::get_listaprotesisrealizadas()
+cVector <cPiezaOrtopedica>& cFabricante::get_listaprotesisrealizadas()
 {
 	return Listaprotesisfabricadas;
 }
@@ -42,10 +43,10 @@ string cFabricante::to_string()
 	stringstream salida;
 	char coma = ',';
 	salida << "Nombre:"<<this->nombre<<coma<<"direccion:"<<this->direccion<<coma << "El numero de habilitacion es:" << this->numhabilitacion << endl;
-
 	return salida.str();
 }
 
 void cFabricante::imprimir()
 {
+	cout << this->to_string() << endl;
 }

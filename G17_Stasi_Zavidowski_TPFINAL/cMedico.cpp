@@ -1,6 +1,8 @@
 #include "cMedico.h"
 #include "cVector.hpp"
 #include <vector>
+#include "cANPA.h"
+
 cMedico::cMedico(string nombre_, string apellido_, string matricula_,vector <cPaciente> listapacientes_, vector <cOrtopedia> listaconvenio_): nombre(nombre_), apellido(apellido_)
 {
 	this->matricula = matricula_;
@@ -51,6 +53,7 @@ string cMedico::to_string()
 
 void cMedico::imprimir()
 {
+	cout << this->to_string() << endl;
 }
 void cMedico::agregarPaciente(cPaciente paciente) {
 	listapacientes.push_back(paciente);
@@ -89,7 +92,7 @@ cPiezaOrtopedica cMedico::buscarprotesis()
 	if (aux == 0) {
 		throw new exception("No encontramos la protesis adecuada para su paciente");
 	}
-	return  ;
+	return ; 
 }
 
 cPiezaOrtopedica cMedico::llamarANPA(std::vector <cOrtopedia> listatodasortopedias)

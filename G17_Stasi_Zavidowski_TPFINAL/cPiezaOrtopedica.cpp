@@ -29,7 +29,7 @@ time_t cPiezaOrtopedica::get_fechafabricacion()
 
 materiales cPiezaOrtopedica::get_tipomaterial()
 {
-	return tipomaterial();
+	return tipomaterial;
 }
 
 string cPiezaOrtopedica::to_string()

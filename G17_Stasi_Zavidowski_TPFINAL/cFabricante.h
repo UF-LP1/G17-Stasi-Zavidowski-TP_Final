@@ -1,10 +1,9 @@
 #pragma once
 #include <string>
-#include "cPiezaOrtopedica.h"
 #include "cVector.hpp"
-#include <vector>
-
+#include "cPiezaOrtopedica.h"
 using namespace std;
+
 class cFabricante
 {
 public:
@@ -15,7 +14,7 @@ public:
 	string get_nombre();
 	string get_direccion();
 	int get_numhabilitaion();
-	static std::vector<cPiezaOrtopedica>& get_listaprotesisrealizadas();
+	static cVector<cPiezaOrtopedica>& get_listaprotesisrealizadas();
 	void solicitudes(string requisitos);
 	string to_string();
 	void imprimir();
@@ -24,7 +23,7 @@ private:
 	const string nombre;
 	string direccion;
 	int numhabilitacion;
-	static std::vector <cPiezaOrtopedica> Listaprotesisfabricadas;
+	static cVector <cPiezaOrtopedica> Listaprotesisfabricadas;
 
 };
 

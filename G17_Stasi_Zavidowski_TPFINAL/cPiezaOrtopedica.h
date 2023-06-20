@@ -1,8 +1,9 @@
 #pragma once
+class cFabricante;
 #include "../materiales.h"
 #include "../Tipodepieza.h"
-#include "cFabricante.h"
 #include <sstream>
+using namespace std;
 class cPiezaOrtopedica
 {
 public:

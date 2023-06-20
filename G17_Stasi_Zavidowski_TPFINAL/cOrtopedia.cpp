@@ -49,6 +49,7 @@ string cOrtopedia::to_string()
 
 void cOrtopedia::imprimir()
 {
+	cout << this->to_string() << endl;
 }
 void cOrtopedia::agregarProtesis(cPiezaOrtopedica protesis)
 {

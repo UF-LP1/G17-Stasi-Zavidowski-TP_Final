@@ -1,7 +1,6 @@
 #pragma once
 #include <string>
 #include "cMedico.h"
-#include "cPaciente.h"
 #include <vector>
 using namespace std;
 

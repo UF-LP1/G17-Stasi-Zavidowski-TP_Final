@@ -1,6 +1,5 @@
 #pragma once
 #include "cHospital.h"
-#include "cMedico.h"
 #include "cPiezaOrtopedica.h"
 #include <sstream>
 class cRegistrosANPA

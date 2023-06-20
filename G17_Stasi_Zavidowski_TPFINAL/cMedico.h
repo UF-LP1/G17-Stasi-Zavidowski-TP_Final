@@ -3,11 +3,6 @@
 #include <vector>
 #include "cPaciente.h"
 #include "cOrtopedia.h"
-#include "cANPA.h"
-#include "cFabricante.h"
-#include "cPiezaOrtopedica.h"
-#include "cPiezaNoQui.h"
-#include "cPiezaQui.h"
 using namespace std;
 class cMedico
 {

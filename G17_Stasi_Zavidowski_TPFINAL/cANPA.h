@@ -1,11 +1,10 @@
 #pragma once
 #include "cRegistrosANPA.h"
-#include "cOrtopedia.h"
-#include "cHospital.h"
-#include "cPaciente.h"
 #include "cVector.hpp"
 #include "cFabricante.h"
 #include <vector>
+class cMedico;
+using namespace std;
 class cANPA
 {
 public:

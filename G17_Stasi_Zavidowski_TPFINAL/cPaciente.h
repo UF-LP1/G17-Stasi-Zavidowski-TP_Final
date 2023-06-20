@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
-#include "cHospital.h"
+using namespace std;
+class cHospital;
+
 using namespace std;
 class cPaciente
 {
@@ -10,7 +12,7 @@ public:
 
 	string get_nombre();
 	string get_apellido();
-	time_t get_fnacimiento();
+	string get_fnacimiento();
 	string get_telefono();
 	float get_radiomiembroamp();
 	materiales get_alergias();

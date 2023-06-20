@@ -16,6 +16,7 @@ string cANPA::to_string()
 
 void cANPA::imprimir()
 {
+	cout << this->to_string() << endl;
 }
 
 cVector<cOrtopedia>& cANPA::get_listatodasortopedias() //& para que retorne la referencia al objeto y que no lo copie
