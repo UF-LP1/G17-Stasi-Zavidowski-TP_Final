@@ -1,6 +1,6 @@
 #include "cHospital.h"
 
-cHospital::cHospital(string nombre_, string direccion_, string espcialidad_, vector<cMedico> medicos_): nombre(nombre_), direccion(direccion_), medicos(medicos_)
+cHospital::cHospital(string nombre_, string direccion_, string espcialidad_, cVector<cMedico> medicos_): nombre(nombre_), direccion(direccion_), medicos(medicos_)
 {
 	this->especialidad = espcialidad_;
 }
@@ -27,21 +27,27 @@ string cHospital::get_especialidad()
 
 string cHospital::to_string()
 {
-	return string();
+	stringstream salida;
+	char coma = ',';
+	salida <<"Nombre:"<<this->nombre<<coma<< "direccion:"<<this->direccion<<coma << "La espacialidad es:" << this->especialidad << endl;
+
+	return salida.str();
 }
 
 void cHospital::imprimir()
 {
 }
 
-cPaciente cHospital::buscar_pacienprotesis(cPiezaOrtopedica pieza)
+
+cPaciente* cHospital::buscar_pacienprotesis(int codigoprotesis)
 {
 	for (int i = 0; i < medicos.size(); i++) {
 		vector<cPaciente> listapacientes = medicos[i].get_listapac();
 		for (int j = 0; j < listapacientes.size(); j++)
 		{
-			if (listapacientes[j].get_cod() == pieza.get_cod())
-				return listapacientes[j];
+			if (listapacientes[j].get_cod() == codigoprotesis)
+				return &listapacientes[j];
 		}
 	}
+	return nullptr;
 }

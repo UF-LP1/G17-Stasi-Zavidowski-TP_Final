@@ -154,7 +154,7 @@
     <ClCompile Include="cPiezaQui.cpp" />
     <ClCompile Include="cRegistrosANPA.cpp" />
     <ClCompile Include="cVector.cpp" />
-    <ClCompile Include="simulacion.cpp" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

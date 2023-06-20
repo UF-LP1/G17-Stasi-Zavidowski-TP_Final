@@ -5,6 +5,10 @@ cFabricante::cFabricante(string nombre_, string direccion_, int numhabilitacion_
 	this->direccion = direccion_;
 }
 
+cFabricante::cFabricante()
+{
+}
+
 cFabricante::~cFabricante()
 {
 }
@@ -35,7 +39,11 @@ void cFabricante::solicitudes(string requisitos)
 
 string cFabricante::to_string()
 {
-	return string();
+	stringstream salida;
+	char coma = ',';
+	salida << "Nombre:"<<this->nombre<<coma<<"direccion:"<<this->direccion<<coma << "El numero de habilitacion es:" << this->numhabilitacion << endl;
+
+	return salida.str();
 }
 
 void cFabricante::imprimir()

@@ -20,10 +20,22 @@ public:
 	int get_codigo();
 	void set_codigo(int cod);
 
+	void setNombre(string nombre);
+
+	void setApellido(string apellido);
+
+	void setFechaNacimiento(string fechaNacimiento);
+
+	void setTelefono(string telefono);
+
+	void setRadioMiembroAmputado(float radioMiembroAmputado);
+
+	void setAlergias(materiales alergias);
+
 private:
 	const string nombre;
 	const string apellido;
-	const string Fnacimiento;
+	string Fnacimiento;
 	string telefono;
 	const enum materiales alergias;
 	float RadioMiembroAmp;

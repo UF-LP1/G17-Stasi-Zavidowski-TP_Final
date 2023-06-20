@@ -8,7 +8,7 @@ using namespace std;
 class cHospital
 {
 public:
-	cHospital(string nombre_, string direccion_, string espcialidad_, vector<cMedico> medicos_);
+	cHospital(string nombre_, string direccion_, string espcialidad_, cVector<cMedico> medicos_);
 	~cHospital();
 
 	string get_nombre();
@@ -16,7 +16,7 @@ public:
 	string get_especialidad();
 	string to_string();
 	void imprimir();
-	cPaciente buscar_pacienprotesis(cPiezaOrtopedica pieza);
+	cPaciente* buscar_pacienprotesis(int codigoprotesis);
 
 
 private:

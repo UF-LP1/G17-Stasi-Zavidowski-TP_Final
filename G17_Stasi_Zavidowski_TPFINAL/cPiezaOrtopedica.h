@@ -2,6 +2,7 @@
 #include "../materiales.h"
 #include "../Tipodepieza.h"
 #include "cFabricante.h"
+#include <sstream>
 class cPiezaOrtopedica
 {
 public:
@@ -15,9 +16,6 @@ public:
     string to_string();
 	void imprimir();
 	int get_cod();
-	static void set_stock_total_disponible(int stock);
-	static int get_stock_total_disponible();
-	static void restarStock();
 
 protected:
 	float dimensiones;
@@ -26,6 +24,6 @@ protected:
 	cFabricante fabricante;
 	Tipodepieza tipopieza;
 	int codprotesis;
-	static int stock_total_disponible;
+
 };
 

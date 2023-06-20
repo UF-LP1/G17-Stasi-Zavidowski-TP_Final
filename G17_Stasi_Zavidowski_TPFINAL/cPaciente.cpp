@@ -15,27 +15,27 @@ cPaciente::~cPaciente()
 
 string cPaciente::get_nombre()
 {
-	return string();
+	return nombre;
 }
 
 string cPaciente::get_apellido()
 {
-	return string();
+	return apellido;
 }
 
 time_t cPaciente::get_fnacimiento()
 {
-	return time_t();
+	return Fnacimiento;
 }
 
 string cPaciente::get_telefono()
 {
-	return string();
+	return telefono;
 }
 
 float cPaciente::get_radiomiembroamp()
 {
-	return 0.0f;
+	return RadioMiembroAmp;
 }
 
 materiales cPaciente::get_alergias()
@@ -50,7 +50,10 @@ int cPaciente::get_cod()
 
 string cPaciente::to_string()
 {
-	return string();
+	stringstream salida;
+	char coma = ',';
+	salida << "El telefono es:" << this->telefono << coma << "El radio del miembro amputado es:" << this->RadioMiembroAmp << coma << "El codigo de la protesis es:" << this->codigoprotesis << endl;
+	return salida.str();
 }
 
 void cPaciente::imprimir()
@@ -64,4 +67,29 @@ int cPaciente::get_codigo()
 
 void cPaciente::set_codigo(int cod)
 {
+	codigoprotesis = cod;
 }
+void cPaciente::setNombre(string nombre) {
+    nombre = nombre;
+}
+
+void cPaciente::setApellido(string apellido) {
+    apellido = apellido;
+}
+
+void cPaciente::setFechaNacimiento(string fechaNacimiento) {
+   Fnacimiento = fechaNacimiento;
+}
+
+void cPaciente::setTelefono(string telefono) {
+    telefono = telefono;
+}
+
+void cPaciente::setAlergias( materiales alergias) {
+    alergias = alergias;
+}
+
+void cPaciente::setRadioMiembroAmputado(float radioMiembroAmputado) {
+    RadioMiembroAmp = radioMiembroAmputado;
+}
+

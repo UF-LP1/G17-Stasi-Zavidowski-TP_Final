@@ -5,11 +5,16 @@
 #include "cOrtopedia.h"
 #include "cANPA.h"
 #include "cFabricante.h"
+#include "cPiezaOrtopedica.h"
+#include "cPiezaNoQui.h"
+#include "cPiezaQui.h"
 using namespace std;
 class cMedico
 {
 public:
 	cMedico(string nombre_, string apellido_, string matricula_, vector <cPaciente> listapacientes_, vector <cOrtopedia> listaconvenio_);
+	cMedico();
+	cMedico(string nombre_, string apellido_, string matricula_);
 	~cMedico();
 
 	string get_nombre();
@@ -18,6 +23,7 @@ public:
 	vector<cPaciente>& get_listapac();
 	string to_string();
 	void imprimir();
+	void agregarPaciente(cPaciente paciente);
 	cPiezaOrtopedica buscarprotesis();
 	cPiezaOrtopedica llamarANPA(std::vector <cOrtopedia> lista);
 

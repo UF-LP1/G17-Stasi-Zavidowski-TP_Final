@@ -3,7 +3,7 @@
 class cPiezaNoQui: public cPiezaOrtopedica
 {
 public:
-	cPiezaNoQui(float dimensiones_, materiales tipomaterial_, time_t fechafabricacion_, cFabricante fabricante_, Tipodepieza tipopieza_, float radiomiembro_);
+	cPiezaNoQui(float dimensiones_, materiales tipomaterial_, time_t fechafabricacion_, cFabricante fabricante_, Tipodepieza tipopieza_, int codprotesis_, float radiomiembro_);
 	~cPiezaNoQui();
 
 

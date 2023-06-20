@@ -9,6 +9,7 @@ class cFabricante
 {
 public:
 	cFabricante(string nombre_,string direccion_, int numhabilitacion_);
+	cFabricante();
 	~cFabricante();
 
 	string get_nombre();
@@ -22,7 +23,7 @@ public:
 private:
 	const string nombre;
 	string direccion;
-	const int numhabilitacion;
+	int numhabilitacion;
 	static std::vector <cPiezaOrtopedica> Listaprotesisfabricadas;
 
 };

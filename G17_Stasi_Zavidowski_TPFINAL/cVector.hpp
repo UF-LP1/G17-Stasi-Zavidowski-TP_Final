@@ -6,7 +6,6 @@ class cVector : public std::vector <T> {
 public:
 	void operator+(T element);
 	void operator-(T element);
-	void operator==(T element);
 	friend std::ostream& operator<<(std::ostream& out, const cVector<T>& element);
 };
 
