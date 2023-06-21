@@ -1,4 +1,4 @@
-/*#include <iostream>
+#include <iostream>
 #include <string>
 #include <vector>
 #include "cMedico.h"
@@ -134,4 +134,3 @@ int main() {
 
     return 0;
 }
-*/

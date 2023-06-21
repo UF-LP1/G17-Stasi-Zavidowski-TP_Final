@@ -29,7 +29,7 @@ int cFabricante::get_numhabilitaion()
 	return 0;
 }
 
-cVector <cPiezaOrtopedica>& cFabricante::get_listaprotesisrealizadas()
+cVector <cPiezaOrtopedica*> cFabricante::get_listaprotesisrealizadas()
 {
 	return Listaprotesisfabricadas;
 }
