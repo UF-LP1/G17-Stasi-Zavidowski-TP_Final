@@ -3,7 +3,7 @@
 #include <vector>
 #include "cANPA.h"
 
-cMedico::cMedico(string nombre_, string apellido_, string matricula_,vector <cPaciente> listapacientes_, vector <cOrtopedia> listaconvenio_): nombre(nombre_), apellido(apellido_)
+cMedico::cMedico(string nombre_, string apellido_, string matricula_,cVector <cPaciente> listapacientes_, cVector <cOrtopedia> listaconvenio_): nombre(nombre_), apellido(apellido_)
 {
 	this->matricula = matricula_;
 	this->listaconvenio = listaconvenio_;
@@ -37,7 +37,7 @@ string cMedico::get_matricula()
 	return string();
 }
 
-vector<cPaciente>& cMedico::get_listapac()
+cVector<cPaciente>& cMedico::get_listapac()
 {
 	return listapacientes;
 }
@@ -95,7 +95,7 @@ cPiezaOrtopedica cMedico::buscarprotesis()
 	return ; 
 }
 
-cPiezaOrtopedica cMedico::llamarANPA(std::vector <cOrtopedia> listatodasortopedias)
+cPiezaOrtopedica cMedico::llamarANPA(cVector <cOrtopedia> listatodasortopedias)
 {
 	cPiezaOrtopedica objvacio;
 
@@ -117,7 +117,7 @@ cPiezaOrtopedica cMedico::llamarANPA(std::vector <cOrtopedia> listatodasortopedi
 	return objvacio;
 }
 
-	cPiezaOrtopedica cMedico::llamarfabricante(std::vector <cFabricante> listafabricantes)
+	cPiezaOrtopedica cMedico::llamarfabricante(cVector <cFabricante> listafabricantes)
 	{
 		cPiezaOrtopedica objnulo;
 		for (int i = 0; i < listafabricantes.size(); i++) {

@@ -7,7 +7,7 @@ using namespace std;
 class cMedico
 {
 public:
-	cMedico(string nombre_, string apellido_, string matricula_, vector <cPaciente> listapacientes_, vector <cOrtopedia> listaconvenio_);
+	cMedico(string nombre_, string apellido_, string matricula_, cVector <cPaciente> listapacientes_, cVector <cOrtopedia> listaconvenio_);
 	cMedico();
 	cMedico(string nombre_, string apellido_, string matricula_);
 	~cMedico();
@@ -15,21 +15,21 @@ public:
 	string get_nombre();
 	string get_apellido();
 	string get_matricula();
-	vector<cPaciente>& get_listapac();
+	cVector<cPaciente>& get_listapac();
 	string to_string();
 	void imprimir();
 	void agregarPaciente(cPaciente paciente);
 	cPiezaOrtopedica buscarprotesis();
-	cPiezaOrtopedica llamarANPA(std::vector <cOrtopedia> lista);
+	cPiezaOrtopedica llamarANPA(cVector <cOrtopedia> lista);
 
-	cPiezaOrtopedica llamarfabricante(std::vector<cFabricante> listafabricantes);
+	cPiezaOrtopedica llamarfabricante(cVector<cFabricante> listafabricantes);
 
 private:
 	const string nombre;
 	const string apellido;
 	string matricula;
-	std::vector <cPaciente> listapacientes;
-    std::vector <cOrtopedia> listaconvenio;
+	cVector <cPaciente> listapacientes;
+    cVector <cOrtopedia> listaconvenio;
 
 };
 

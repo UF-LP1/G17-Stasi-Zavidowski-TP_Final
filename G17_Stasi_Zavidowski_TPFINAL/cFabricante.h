@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "cVector.hpp"
+#include  "cPiezaOrtopedica.h"
 using namespace std;
 
 class cFabricante

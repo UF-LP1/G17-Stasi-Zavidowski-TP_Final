@@ -2,7 +2,7 @@
 #include "../materiales.h"
 #include "../Tipodepieza.h"
 #include <sstream>
-#include "cFabricante.h"
+class cFabricante;
 using namespace std;
 class cPiezaOrtopedica
 {
