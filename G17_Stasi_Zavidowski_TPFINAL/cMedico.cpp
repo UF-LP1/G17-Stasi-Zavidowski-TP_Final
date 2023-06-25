@@ -136,13 +136,3 @@ cPiezaOrtopedica* cMedico::llamarANPA(cVector <cOrtopedia> listatodasortopedias)
 		return nullptr;
 	}
 
-
-	/*bool operator==(cPaciente& pac, cPiezaOrtopedica& prot)
-	{
-		bool esta = false;
-		if (pac.get_radiomiembroamp() == prot.get_dimensiones() && pac.get_alergias() != prot.get_tipomaterial())
-			esta = true;
-		return esta;
-
-	}
-	*/
