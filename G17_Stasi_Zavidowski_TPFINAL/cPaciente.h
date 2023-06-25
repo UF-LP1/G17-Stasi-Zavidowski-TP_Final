@@ -1,13 +1,13 @@
 #pragma once
 #include <string>
-using namespace std;
-class cHospital;
+#include <sstream>
+#include "cPiezaOrtopedica.h"
 
 using namespace std;
 class cPaciente
 {
 public:
-	cPaciente(string nombre_, string apellido_, string Fnacimiento, string telefono,enum materiales alergias, float RadioMiembroAmp, int codigoprotesis_);
+	cPaciente(string nombre_, string apellido_, string Fnacimiento, string telefono,enum materiales alergias, float RadioMiembroAmp, int codigoprotesis_, Tipodepieza tipo_);
 	~cPaciente();
 
 	string get_nombre();
@@ -33,6 +33,8 @@ public:
 	void setRadioMiembroAmputado(float radioMiembroAmputado);
 
 	void setAlergias(materiales alergias);
+	void setTipo(Tipodepieza tipo);
+	//bool operator==(cPiezaOrtopedica& pieza);
 
 private:
 	const string nombre;
@@ -42,7 +44,8 @@ private:
 	const enum materiales alergias;
 	float RadioMiembroAmp;
 	int codigoprotesis;
-
-
+	Tipodepieza tipo;
+	bool operator==(cPiezaOrtopedica& pieza);
+	friend class cMedico;
 };
 

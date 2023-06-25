@@ -1,7 +1,7 @@
 #include "cPaciente.h"
 #include <iostream>
 
-cPaciente::cPaciente(string nombre_, string apellido_, string Fnacimiento, string telefono, enum materiales alergias, float RadioMiembroAmp, int codigoprotesis_): nombre(nombre_), apellido(apellido_), Fnacimiento(Fnacimiento), alergias(alergias)
+cPaciente::cPaciente(string nombre_, string apellido_, string Fnacimiento, string telefono, enum materiales alergias, float RadioMiembroAmp, int codigoprotesis_, Tipodepieza tipo_): nombre(nombre_), apellido(apellido_), Fnacimiento(Fnacimiento), alergias(alergias), tipo(tipo_)
 {
 	this->telefono = telefono;
 	this->RadioMiembroAmp = RadioMiembroAmp;
@@ -51,9 +51,10 @@ int cPaciente::get_cod()
 
 string cPaciente::to_string()
 {
-	stringstream salida;
+	
+    stringstream salida;
 	char coma = ',';
-	salida << "El telefono es:" << this->telefono << coma << "El radio del miembro amputado es:" << this->RadioMiembroAmp << coma << "El codigo de la protesis es:" << this->codigoprotesis << 
+	salida << "El telefono es:" << this->telefono << coma << "El radio del miembro amputado es:" << this->RadioMiembroAmp << coma << "El codigo de la protesis es:" << this->codigoprotesis << endl;
 	return salida.str();
 }
 
@@ -89,6 +90,20 @@ void cPaciente::setTelefono(string telefono) {
 
 void cPaciente::setAlergias( materiales alergias) {
     alergias = alergias;
+}
+
+void cPaciente::setTipo(Tipodepieza tipo)
+{
+	tipo = tipo;
+}
+
+bool cPaciente::operator==(cPiezaOrtopedica& pieza)
+{
+	bool esta = false;
+	if (this->alergias != pieza.get_tipomaterial() && this->RadioMiembroAmp == pieza.get_dimensiones() && this->tipo == pieza.get_tipo())
+		esta = true;
+
+	return esta;
 }
 
 void cPaciente::setRadioMiembroAmputado(float radioMiembroAmputado) {

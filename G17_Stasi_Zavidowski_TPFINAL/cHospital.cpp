@@ -50,5 +50,5 @@ cPaciente* cHospital::buscar_pacienprotesis(int codigoprotesis)
 				return &listapacientes[j];
 		}
 	}
-	return;
+	return nullptr; //hacer try catch
 }

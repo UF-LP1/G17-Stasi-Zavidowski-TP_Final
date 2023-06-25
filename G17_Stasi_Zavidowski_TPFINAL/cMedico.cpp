@@ -58,7 +58,7 @@ void cMedico::imprimir()
 void cMedico::agregarPaciente(cPaciente paciente) {
 	listapacientes.push_back(paciente);
 }
-cPiezaOrtopedica cMedico::buscarprotesis()
+cPiezaOrtopedica* cMedico::buscarprotesis()
 {
 	int aux = 0;
 	for (int i = 0; i < listaconvenio.size(); i++)
@@ -73,31 +73,30 @@ cPiezaOrtopedica cMedico::buscarprotesis()
 				listapacientes[i].set_codigo(listaprotesis[j].get_cod());// le guardo el codigo de la protesis que le voy a poner al paceinte, osea si su codigo != 0, ya tiene protesis
 				aux = listaprotesis[j].get_cod();
 				cOrtopedia::restarStock();
-				return listaprotesis[j]; 
+				return &listaprotesis[j]; 
 			}
 		}
 
 	}
    if (aux == 0) // NO ENCONTREE LA PROTESIS EN LAS ORTOPEDIAS QUE TENGO CONVENIO
 	{
-		cPiezaOrtopedica encontrada = llamarANPA(cANPA::get_listatodasortopedias());
-		aux = encontrada.get_cod();
+		cPiezaOrtopedica* encontrada = llamarANPA(cANPA::get_listatodasortopedias());
+		aux = encontrada->get_cod();
 		return encontrada;
 	}
 	if (aux == 0) {
-		cPiezaOrtopedica protesisfabricada = llamarfabricante(cANPA::get_listafabricantes());
-		aux = protesisfabricada.get_cod();
+		cPiezaOrtopedica* protesisfabricada = llamarfabricante(cANPA::get_listafabricantes());
+		aux = protesisfabricada->get_cod();
 		return protesisfabricada;
 	}
 	if (aux == 0) {
 		throw new exception("No encontramos la protesis adecuada para su paciente");
 	}
-	return ; 
+	return nullptr; 
 }
 
-cPiezaOrtopedica cMedico::llamarANPA(cVector <cOrtopedia> listatodasortopedias)
+cPiezaOrtopedica* cMedico::llamarANPA(cVector <cOrtopedia> listatodasortopedias)
 {
-	cPiezaOrtopedica objvacio;
 
 	for (int i = 0; i < listatodasortopedias.size(); i++) {
 		int aux = 0;
@@ -110,37 +109,40 @@ cPiezaOrtopedica cMedico::llamarANPA(cVector <cOrtopedia> listatodasortopedias)
 			if (listapacientes[i] == protesis) {
 				listapacientes[i].set_codigo(protesis.get_cod());
 				aux = protesis.get_cod();
-				return protesis;
+				return &protesis;
 			}
 		}
 	}
-	return objvacio;
+	return nullptr;
 }
 
-	cPiezaOrtopedica cMedico::llamarfabricante(cVector <cFabricante> listafabricantes)
+	cPiezaOrtopedica* cMedico::llamarfabricante(cVector<cFabricante> listafabricantes)
 	{
-		cPiezaOrtopedica objnulo;
 		for (int i = 0; i < listafabricantes.size(); i++) {
 			int aux = 0;
 			cFabricante fabric = listafabricantes[i];
 
-			//recorro la lista de protesis que tiene ese fabricante
+			// Recorro la lista de prótesis que tiene ese fabricante
 			for (int j = 0; j < fabric.get_listaprotesisrealizadas().size(); j++) {
-				cPiezaOrtopedica protesis = fabric.get_listaprotesisrealizadas()[j]; // Accedo a la protesis en la posición j
+				cPiezaOrtopedica* protesis = fabric.get_listaprotesisrealizadas()[j]; // Accedo a la prótesis en la posición j
 
-				if (listapacientes[i] == protesis) {
-					listapacientes[i].set_codigo(protesis.get_cod());
-					aux = protesis.get_cod();
+				if (listapacientes[i] == *protesis) {
+					listapacientes[i].set_codigo(protesis->get_cod());
+					aux = protesis->get_cod();
 					return protesis;
 				}
 			}
 		}
-		return objnulo;
+		return nullptr;
 	}
-	bool operator==(cPaciente& pac, cPiezaOrtopedica& prot)
+
+
+	/*bool operator==(cPaciente& pac, cPiezaOrtopedica& prot)
 	{
 		bool esta = false;
-			if (pac.get_radiomiembroamp() == prot.get_dimensiones() && pac.get_alergias() != prot.get_tipomaterial())
-				esta = true;
+		if (pac.get_radiomiembroamp() == prot.get_dimensiones() && pac.get_alergias() != prot.get_tipomaterial())
+			esta = true;
 		return esta;
+
 	}
+	*/

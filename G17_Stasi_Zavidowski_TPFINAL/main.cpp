@@ -51,8 +51,9 @@ int main() {
         {// Solicitar datos del paciente
             std::string nombrePaciente, apellidoPaciente, telefono, fechaNacimiento;
             enum materiales alergias;
+            enum Tipodepieza tipo;
             float radioMiembroAmp;
-            int codigoProtesis, alergiasint;
+            int codigoProtesis, alergiasint, tipoint;
 
             std::cout << "Ingrese los datos del paciente:" << std::endl;
             std::cout << "Nombre: ";
@@ -63,14 +64,17 @@ int main() {
             std::getline(std::cin, fechaNacimiento);
             std::cout << "Teléfono: ";
             std::getline(std::cin, telefono);
-            std::cout << "Alergias: ";
+            std::cout << "Alergias: 1-titanio, 2-bioceramica, 3-polietileno, 4-acero, 5-fibradecarbono ";
             std::cin >> alergiasint;
             std::cout << "Radio del Miembro Amputado: ";
             std::cin >> radioMiembroAmp;
             std::cout << "Código de Prótesis: ";
             std::cin >> codigoProtesis;
+            std::cout << "Tipo de Prótesis: 1-infderecha, 2-infizquierda, 3-supderecha, 4-supizquierda";
+            std::cin >> tipoint;
             alergias = static_cast<materiales>(alergiasint);
-            cPaciente paciente(nombrePaciente, apellidoPaciente, fechaNacimiento, telefono, alergias, radioMiembroAmp, codigoProtesis);
+            tipo = static_cast<Tipodepieza>(tipoint);
+            cPaciente paciente(nombrePaciente, apellidoPaciente, fechaNacimiento, telefono, alergias, radioMiembroAmp, codigoProtesis, tipo);
             // Crear objeto cPaciente
             paciente.setNombre(nombrePaciente);
             paciente.setApellido(apellidoPaciente);
@@ -79,8 +83,8 @@ int main() {
             paciente.setAlergias(alergias);
             paciente.setRadioMiembroAmputado(radioMiembroAmp);
             paciente.set_codigo(codigoProtesis);
-            cPaciente paciente(nombrePaciente, apellidoPaciente, fechaNacimiento, telefono, alergias, radioMiembroAmp, codigoProtesis);
-         
+            paciente.setTipo(tipo);
+
             // Agregar paciente al médico
             medico.agregarPaciente(paciente);
             std::cout << "Se ha creado el paciente exitosamente." << std::endl;
@@ -94,9 +98,14 @@ int main() {
         }
         case 4:
         {  // Buscar prótesis para paciente
-            cPiezaOrtopedica protesis = medico.buscarprotesis();
-            std::cout << "Se encontró la siguiente prótesis para el paciente:" << std::endl;
-            protesis.imprimir();
+            try {
+                cPiezaOrtopedica* protesis = medico.buscarprotesis();
+                std::cout << "Se encontró la siguiente prótesis para el paciente:" << std::endl;
+                protesis->imprimir();
+            }
+            catch (exception* e) {
+                std::cerr << "Error" << e->what() << std::endl;
+            }
             break;
         }
         case 5:

@@ -19,10 +19,10 @@ public:
 	string to_string();
 	void imprimir();
 	void agregarPaciente(cPaciente paciente);
-	cPiezaOrtopedica buscarprotesis();
-	cPiezaOrtopedica llamarANPA(cVector <cOrtopedia> lista);
+	cPiezaOrtopedica* buscarprotesis();
+	cPiezaOrtopedica* llamarANPA(cVector <cOrtopedia> lista);
 
-	cPiezaOrtopedica llamarfabricante(cVector<cFabricante> listafabricantes);
+	cPiezaOrtopedica* llamarfabricante(cVector<cFabricante> listafabricantes);
 
 private:
 	const string nombre;
@@ -32,4 +32,3 @@ private:
     cVector <cOrtopedia> listaconvenio;
 
 };
-

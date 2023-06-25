@@ -1,5 +1,5 @@
 #include "cPiezaOrtopedica.h"
-cPiezaOrtopedica::cPiezaOrtopedica(float dimensiones_, materiales tipomaterial_, time_t fechafabricacion_, cFabricante fabricante_, Tipodepieza tipopieza_, int codprotesis_): fabricante(fabricante_)
+cPiezaOrtopedica::cPiezaOrtopedica(float dimensiones_, materiales tipomaterial_, time_t fechafabricacion_, Tipodepieza tipopieza_, int codprotesis_)
 {
 	this->dimensiones = dimensiones_;
 	this->tipomaterial = tipomaterial_;
@@ -9,9 +9,6 @@ cPiezaOrtopedica::cPiezaOrtopedica(float dimensiones_, materiales tipomaterial_,
 
 }
 
-cPiezaOrtopedica::cPiezaOrtopedica()
-{
-}
 
 cPiezaOrtopedica::~cPiezaOrtopedica()
 {
@@ -30,6 +27,11 @@ time_t cPiezaOrtopedica::get_fechafabricacion()
 materiales cPiezaOrtopedica::get_tipomaterial()
 {
 	return tipomaterial;
+}
+
+Tipodepieza cPiezaOrtopedica::get_tipo()
+{
+	return tipopieza;
 }
 
 string cPiezaOrtopedica::to_string()
