@@ -42,13 +42,19 @@ void cHospital::imprimir()
 
 cPaciente* cHospital::buscar_pacienprotesis(int codigoprotesis)
 {
+	bool esta = false;
+	int cont = 0;
 	for (int i = 0; i < medicos.size(); i++) {
 		vector<cPaciente> listapacientes = medicos[i].get_listapac();
 		for (int j = 0; j < listapacientes.size(); j++)
 		{
-			if (listapacientes[j].get_cod() == codigoprotesis)
+			esta == true;
+			if (listapacientes[j].get_codigo() == codigoprotesis)
 				return &listapacientes[j];
 		}
 	}
-	return nullptr; //hacer try catch
+	if(esta == false)
+	throw new exception("No se encontro el paciente con esa protesis");
+
+	return nullptr ;
 }

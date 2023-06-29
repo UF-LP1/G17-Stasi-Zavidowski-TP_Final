@@ -5,10 +5,6 @@ cFabricante::cFabricante(string nombre_, string direccion_, int numhabilitacion_
 	this->direccion = direccion_;
 }
 
-cFabricante::cFabricante()
-{
-
-}
 
 cFabricante::~cFabricante()
 {
@@ -49,4 +45,23 @@ string cFabricante::to_string()
 void cFabricante::imprimir()
 {
 	cout << this->to_string() << endl;
+}
+
+void cFabricante::mostrarInformacion()
+{
+	for (int i = 0; i < Listaprotesisfabricadas.size(); i++) {
+		cPiezaOrtopedica* protesis = Listaprotesisfabricadas[i];
+
+		cPiezaQui* protesisQuirurgica = dynamic_cast<cPiezaQui*>(protesis);
+		if (protesisQuirurgica != nullptr) {
+			// La prótesis es de tipo cPiezaOrtopedicaQuirurgica
+			protesisQuirurgica->imprimir();
+		}
+
+		cPiezaNoQui* protesisNoQuirurgica = dynamic_cast<cPiezaNoQui*>(protesis);
+		if (protesisNoQuirurgica != nullptr) {
+			// La prótesis es de tipo cPiezaOrtopedicaNoQuirurgica
+			protesisNoQuirurgica->imprimir();
+		}
+	}
 }

@@ -56,15 +56,15 @@ void cMedico::imprimir()
 	cout << this->to_string() << endl;
 }
 void cMedico::agregarPaciente(cPaciente paciente) {
-	listapacientes.push_back(paciente);
+	listapacientes + paciente;
 }
 cPiezaOrtopedica* cMedico::buscarprotesis()
 {
 	int aux = 0;
 	for (int i = 0; i < listaconvenio.size(); i++)
 	{
-		std::vector <cPiezaOrtopedica> listaprotesis = listaconvenio[i].get_listaprotesis();
-		std::vector <cOrtopedia> listatodasortopedias;
+		vector <cPiezaOrtopedica> listaprotesis = listaconvenio[i].get_listaprotesis();
+		vector <cOrtopedia> listatodasortopedias;
 
 		for (int j = 0; j < listaprotesis.size(); j++) {
 		
@@ -116,23 +116,23 @@ cPiezaOrtopedica* cMedico::llamarANPA(cVector <cOrtopedia> listatodasortopedias)
 	return nullptr;
 }
 
-	cPiezaOrtopedica* cMedico::llamarfabricante(cVector<cFabricante> listafabricantes)
-	{
-		for (int i = 0; i < listafabricantes.size(); i++) {
-			int aux = 0;
-			cFabricante fabric = listafabricantes[i];
+cPiezaOrtopedica* cMedico::llamarfabricante(cVector<cFabricante> listafabricantes)
+{
+	for (int i = 0; i < listafabricantes.size(); i++) {
+		int aux = 0;
+		cFabricante fabric = listafabricantes[i];
 
-			// Recorro la lista de prótesis que tiene ese fabricante
-			for (int j = 0; j < fabric.get_listaprotesisrealizadas().size(); j++) {
-				cPiezaOrtopedica* protesis = fabric.get_listaprotesisrealizadas()[j]; // Accedo a la prótesis en la posición j
+		// Recorro la lista de prótesis que tiene ese fabricante
+		for (int j = 0; j < fabric.get_listaprotesisrealizadas().size(); j++) {
+			cPiezaOrtopedica* protesis = fabric.get_listaprotesisrealizadas()[j]; // Accedo a la prótesis en la posición j
 
-				if (listapacientes[i] == *protesis) {
-					listapacientes[i].set_codigo(protesis->get_cod());
-					aux = protesis->get_cod();
-					return protesis;
-				}
+			if (listapacientes[i] == *protesis) {
+				listapacientes[i].set_codigo(protesis->get_cod());
+				aux = protesis->get_cod();
+				return protesis;
 			}
 		}
-		return nullptr;
 	}
+	return nullptr;
+}
 

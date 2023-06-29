@@ -1,5 +1,6 @@
 #include "cANPA.h"
-
+ cVector <cOrtopedia> cANPA::listatodasortopedias;
+ cVector <cFabricante> cANPA::listafabricantes;
 
 cANPA::cANPA(cVector<cRegistrosANPA> listaregistros_): listaregistros(listaregistros_)
 {

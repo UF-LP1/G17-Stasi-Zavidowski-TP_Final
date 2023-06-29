@@ -2,7 +2,7 @@
 #include "../materiales.h"
 #include "../Tipodepieza.h"
 #include <sstream>
-class cFabricante;
+#include <iostream>
 using namespace std;
 class cPiezaOrtopedica
 {
@@ -14,7 +14,7 @@ public:
 	time_t get_fechafabricacion();
 	materiales get_tipomaterial();
 	Tipodepieza get_tipo();
-    string to_string();
+   virtual string to_string();
 	void imprimir();
 	int get_cod();
 

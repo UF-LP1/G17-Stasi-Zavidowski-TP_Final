@@ -3,6 +3,7 @@
 #include <vector>
 #include "cPaciente.h"
 #include "cOrtopedia.h"
+#include "cFabricante.h"
 using namespace std;
 class cMedico
 {
@@ -23,6 +24,8 @@ public:
 	cPiezaOrtopedica* llamarANPA(cVector <cOrtopedia> lista);
 
 	cPiezaOrtopedica* llamarfabricante(cVector<cFabricante> listafabricantes);
+
+	void mostrarInfoPiezas();
 
 private:
 	const string nombre;

@@ -1,12 +1,16 @@
 #include "cPaciente.h"
 #include <iostream>
 
-cPaciente::cPaciente(string nombre_, string apellido_, string Fnacimiento, string telefono, enum materiales alergias, float RadioMiembroAmp, int codigoprotesis_, Tipodepieza tipo_): nombre(nombre_), apellido(apellido_), Fnacimiento(Fnacimiento), alergias(alergias), tipo(tipo_)
+cPaciente::cPaciente(string nombre_, string apellido_, string Fnacimiento, string telefono,  materiales alergias, float RadioMiembroAmp, int codigoprotesis_, Tipodepieza tipo_): nombre(nombre_), apellido(apellido_), Fnacimiento(Fnacimiento), alergias(alergias), tipo(tipo_)
 {
+	this->nombre = nombre_;
+	this->apellido = apellido_;
+	this->Fnacimiento = Fnacimiento;
 	this->telefono = telefono;
+	this->alergias = alergias;
 	this->RadioMiembroAmp = RadioMiembroAmp;
 	this->codigoprotesis = 0;
-
+	this->tipo = tipo_;
 
 }
 
@@ -16,39 +20,38 @@ cPaciente::~cPaciente()
 
 string cPaciente::get_nombre()
 {
-	return nombre;
+	return this->nombre;
 }
 
 string cPaciente::get_apellido()
 {
-	return apellido;
+	return this->apellido;
 }
 
 string cPaciente::get_fnacimiento()
 {
-	return Fnacimiento;
+	return this->Fnacimiento;
 }
 
 string cPaciente::get_telefono()
 {
-	return telefono;
+	return this->telefono;
 }
 
 float cPaciente::get_radiomiembroamp()
 {
-	return RadioMiembroAmp;
+	return this->RadioMiembroAmp;
 }
 
 materiales cPaciente::get_alergias()
 {
-	return materiales();
+	return this->alergias;
 }
 
-int cPaciente::get_cod()
+int cPaciente::get_tipo()
 {
-	return codigoprotesis;
+	return this->tipo;
 }
-
 string cPaciente::to_string()
 {
 	
@@ -65,7 +68,7 @@ void cPaciente::imprimir()
 
 int cPaciente::get_codigo()
 {
-	return codigoprotesis;
+	return this->codigoprotesis;
 }
 
 void cPaciente::set_codigo(int cod)
@@ -73,7 +76,8 @@ void cPaciente::set_codigo(int cod)
 	codigoprotesis = cod;
 }
 void cPaciente::setNombre(string nombre) {
-    nombre = nombre;
+    
+	nombre = nombre;
 }
 
 void cPaciente::setApellido(string apellido) {

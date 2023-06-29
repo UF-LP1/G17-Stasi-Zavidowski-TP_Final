@@ -20,8 +20,8 @@ public:
 	void agregarProtesis(cPiezaOrtopedica protesis);
 
 private:
-	const string nombre;
-	const string direcion;
+    string nombre;
+    string direcion;
 	static int stock;
 	cVector <cPiezaOrtopedica> ListaProtesis;
 

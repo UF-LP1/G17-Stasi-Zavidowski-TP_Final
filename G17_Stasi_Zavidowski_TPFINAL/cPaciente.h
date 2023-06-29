@@ -16,7 +16,7 @@ public:
 	string get_telefono();
 	float get_radiomiembroamp();
 	materiales get_alergias();
-	int get_cod();
+	int get_tipo();
 	string to_string();
 	void imprimir();
 	int get_codigo();
@@ -34,14 +34,13 @@ public:
 
 	void setAlergias(materiales alergias);
 	void setTipo(Tipodepieza tipo);
-	//bool operator==(cPiezaOrtopedica& pieza);
 
 private:
-	const string nombre;
-	const string apellido;
+	 string nombre;
+	 string apellido;
 	string Fnacimiento;
 	string telefono;
-	const enum materiales alergias;
+	  materiales alergias;
 	float RadioMiembroAmp;
 	int codigoprotesis;
 	Tipodepieza tipo;

@@ -41,17 +41,17 @@ string cPiezaOrtopedica::to_string()
 	tm* ffabricacion = new tm;
 	localtime_s(ffabricacion, &this->fechafabricacion);
 
-	salida << "Las dimensiones son:" << this->dimensiones << endl;
-	salida << "Fecha de fabricacion:" << ffabricacion->tm_mday << "/" << ffabricacion->tm_mon + 1 << "/" << ffabricacion->tm_year + 1900 << endl;
-	salida << "El tipo de pieza es:" << this->tipopieza << endl;
-	salida << "El codigo de la protesis es:" << this->codprotesis << endl;
+	salida << "Las dimensiones son:" << this->dimensiones << "Fecha de fabricacion:" << ffabricacion->tm_mday << "/" << ffabricacion->tm_mon + 1 << "/" << ffabricacion->tm_year + 1900 << "El tipo de pieza es:" << this->tipopieza << "El codigo de la protesis es:" << this->codprotesis << endl;
+
 	delete ffabricacion;
 
-	return string();
+	return salida.str();
 }
 
 void cPiezaOrtopedica::imprimir()
-{
+{ 
+	cout << this->to_string();
+
 }
 
 int cPiezaOrtopedica::get_cod()

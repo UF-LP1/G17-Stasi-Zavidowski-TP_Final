@@ -10,7 +10,8 @@ class cANPA
 public:
 	cANPA(cVector <cRegistrosANPA> listaregistros_);
 	~cANPA();
-
+	static cVector <cOrtopedia> listatodasortopedias;
+	static cVector <cFabricante> listafabricantes;
 	string to_string();
 	void imprimir();
 	static cVector<cOrtopedia>& get_listatodasortopedias();
@@ -18,7 +19,5 @@ public:
 
 private:
 	cVector <cRegistrosANPA> listaregistros;
-	static cVector <cOrtopedia> listatodasortopedias;
-	static cVector <cFabricante> listafabricantes;
 };
 

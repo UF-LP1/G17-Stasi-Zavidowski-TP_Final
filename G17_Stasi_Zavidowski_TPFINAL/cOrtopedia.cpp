@@ -2,8 +2,10 @@
 #include "cVector.hpp"
 
 int cOrtopedia::stock = 0;
-cOrtopedia::cOrtopedia(string nombre_, string direccion_, cVector<cPiezaOrtopedica> ListaProtesis): nombre(nombre_), direcion(direccion_)
+cOrtopedia::cOrtopedia(string nombre_, string direccion_, cVector<cPiezaOrtopedica> ListaProtesis)
 {
+	this->nombre = nombre_;
+	this->direcion = direccion_;
 	this->ListaProtesis = ListaProtesis;
 }
 
@@ -13,12 +15,12 @@ cOrtopedia::~cOrtopedia()
 
 string cOrtopedia::get_nombre()
 {
-	return string();
+	return this->nombre;
 }
 
 string cOrtopedia::get_direccion()
 {
-	return string();
+	return this->direcion;
 }
 
 vector<cPiezaOrtopedica>& cOrtopedia::get_listaprotesis()
