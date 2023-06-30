@@ -16,6 +16,9 @@ public:
 	string get_nombre();
 	string get_apellido();
 	string get_matricula();
+	void set_nombre(string nomb);
+	void set_apellido(string ape);
+	void set_matricula(string matri);
 	cVector<cPaciente>& get_listapac();
 	string to_string();
 	void imprimir();
@@ -25,11 +28,10 @@ public:
 
 	cPiezaOrtopedica* llamarfabricante(cVector<cFabricante> listafabricantes);
 
-	void mostrarInfoPiezas();
 
 private:
-	const string nombre;
-	const string apellido;
+	 string nombre;
+	 string apellido;
 	string matricula;
 	cVector <cPaciente> listapacientes;
     cVector <cOrtopedia> listaconvenio;

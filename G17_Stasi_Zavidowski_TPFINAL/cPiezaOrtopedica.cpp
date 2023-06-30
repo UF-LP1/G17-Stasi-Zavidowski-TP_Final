@@ -56,6 +56,6 @@ void cPiezaOrtopedica::imprimir()
 
 int cPiezaOrtopedica::get_cod()
 {
-	return codprotesis;
+	return this->codprotesis;
 }
 

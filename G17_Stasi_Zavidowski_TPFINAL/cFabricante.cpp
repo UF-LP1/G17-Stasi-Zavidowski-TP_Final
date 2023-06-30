@@ -47,7 +47,7 @@ void cFabricante::imprimir()
 	cout << this->to_string() << endl;
 }
 
-void cFabricante::mostrarInformacion()
+void cFabricante::mostrarInformacion()//dynamic cast para mostrar la informacion de la pieza que yo quiero con sus atributos
 {
 	for (int i = 0; i < Listaprotesisfabricadas.size(); i++) {
 		cPiezaOrtopedica* protesis = Listaprotesisfabricadas[i];

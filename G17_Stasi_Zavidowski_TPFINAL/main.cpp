@@ -19,11 +19,20 @@ void mostrarMenu() {// esta manera dinamica de interaccion con el usuario lo hic
 
 int main() {
     cMedico medico;
-    //cVector<cMedico> medicosaleman;
-    cVector<cMedico> medicosaleman; //= new cVector<cMedico>;
+    cVector<cMedico> medicosaleman; 
+    cVector<cPiezaOrtopedica> listalujan;
     cHospital hospital("Aleman", "Av Pueyrredon 1899", "traumatologia", medicosaleman);
     int opcion;
     bool salir = false;
+     cPaciente pac1("Renata", "Stasi", "21/11/2000", "22298888", titanio, 32.2, 112, supderecha);
+     cPaciente pac2("Emilia", "Janin", "3/10/12", "112321", polietileno, 12.3, 222, supizquierda);
+     cPiezaNoQui pno1(12.3, acero, 1292001, supderecha, 112, 32.2);
+     cPiezaQui p2(21, acero, 2112018, supizquierda, 222, "cadera");
+     cOrtopedia lujan ("lujan", "callao 22", listalujan);
+     listalujan + pno1;
+     listalujan + p2;
+    medico.agregarPaciente(pac1);
+    medico.agregarPaciente(pac2);
 
     while (!salir) {
         mostrarMenu();
@@ -39,11 +48,14 @@ int main() {
             cin >> nombreMedico;
             cout << "Apellido: ";
             cin >> apellidoMedico;
-            cout << "Matrícula: ";
+            cout << "Matricula: ";
             cin >> matriculaMedico;
 
             // Crear objeto cMedico
-            //cMedico medico(nombreMedico, apellidoMedico, matriculaMedico);
+            cMedico medico(nombreMedico, apellidoMedico, matriculaMedico);
+            medico.set_nombre(nombreMedico);
+            medico.set_apellido(apellidoMedico);
+            medico.set_matricula(matriculaMedico);
             medicosaleman + medico; //utilizo sobrecarga del +
             cout << "Se ha creado el médico exitosamente." << endl;
             break;
@@ -58,20 +70,20 @@ int main() {
 
             cout << "Ingrese los datos del paciente:" << std::endl;
             cout << "Nombre: ";
-            getline(std::cin, nombrePaciente);
+            cin >> nombrePaciente;
             cout << "Apellido: ";
-            getline(std::cin, apellidoPaciente);
+            cin >> apellidoPaciente;
             cout << "Fecha de Nacimiento: ";
-            getline(std::cin, fechaNacimiento);
-            cout << "Teléfono: ";
-            getline(std::cin, telefono);
+            cin>> fechaNacimiento;
+            cout << "Telefono: ";
+            cin>> telefono;
             cout << "Alergias: 1-titanio, 2-bioceramica, 3-polietileno, 4-acero, 5-fibradecarbono ";
             cin >> alergiasint;
             cout << "Radio del Miembro Amputado: ";
             cin >> radioMiembroAmp;
-            cout << "Código de Prótesis: ";
+            cout << "Codigo de Protesis: ";
             cin >> codigoProtesis;
-            cout << "Tipo de Prótesis: 1-infderecha, 2-infizquierda, 3-supderecha, 4-supizquierda";
+            cout << "Tipo de Protesis: 1-infderecha, 2-infizquierda, 3-supderecha, 4-supizquierda";
             cin >> tipoint;
             alergias = static_cast<materiales>(alergiasint);
             tipo = static_cast<Tipodepieza>(tipoint);
@@ -88,12 +100,12 @@ int main() {
 
             // Agregar paciente al médico
             medico.agregarPaciente(paciente);
-            std::cout << "Se ha creado el paciente exitosamente." << std::endl;
+            cout << "Se ha creado el paciente exitosamente." << endl;
             break;
         }
         case 3:
         { // Imprimir datos del médico
-            std::cout << "Datos del Medico:" << std::endl;
+            cout << "Datos del Medico:" << endl;
             for (int i = 0; i < medicosaleman.size(); i++) {
                 medicosaleman[i].imprimir();
                 break;
@@ -103,31 +115,31 @@ int main() {
         {  // Buscar prótesis para paciente
             try {
                 cPiezaOrtopedica* protesis = medico.buscarprotesis();
-                std::cout << "Se encontro la siguiente protesis para el paciente:" << std::endl;
+                cout << "Se encontro la siguiente protesis para el paciente:" << endl;
                 protesis->imprimir();
             }
             catch (exception* e) {
-                std::cerr << "Error" << e->what() << std::endl;
+                cerr << "Error" << e->what() << endl;
             }
             break;
         }
         case 5:
         {// Buscar paciente por prótesis
             int codigoProtesis;
-            std::cout << "Ingrese el codigo de protesis a buscar: ";
-            std::cin >> codigoProtesis;
+            cout << "Ingrese el codigo de protesis a buscar: ";
+            cin >> codigoProtesis;
 
-            cPaciente* pacienteEncontrado = hospital.buscar_pacienprotesis(codigoProtesis);
+            
             try {
 
                 cPaciente* pacienteEncontrado = hospital.buscar_pacienprotesis(codigoProtesis);
                 if (pacienteEncontrado != nullptr) {
-                    std::cout << "Se encontro el siguiente paciente con la protesis buscada:" << std::endl;
+                    cout << "Se encontro el siguiente paciente con la protesis buscada:" << endl;
                     pacienteEncontrado->imprimir();
                 }
             }
             catch (exception* e){
-                std::cerr << "Error" << e->what() << std::endl;
+                cerr << "Error" << e->what() << endl;
             }
         
             break;
@@ -138,12 +150,12 @@ int main() {
             break;
         }
         default:
-            std::cout << "Opcion invalida. Por favor, ingrese un numero valido." << std::endl;
+            cout << "Opcion invalida. Por favor, ingrese un numero valido." << endl;
             break;
         }
 
-        std::cout << std::endl;
+        cout << endl;
     }
-
+   
     return 0;
 }

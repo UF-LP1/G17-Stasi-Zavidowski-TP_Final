@@ -24,17 +24,32 @@ cMedico::~cMedico()
 
 string cMedico::get_nombre()
 {
-	return string();
+	return nombre;
 }
 
 string cMedico::get_apellido()
 {
-	return string();
+	return apellido;
 }
 
 string cMedico::get_matricula()
 {
-	return string();
+	return matricula;
+}
+
+void cMedico::set_nombre(string nomb)
+{
+	nombre = nomb;
+}
+
+void cMedico::set_apellido(string ape)
+{
+	apellido = ape;
+}
+
+void cMedico::set_matricula(string matri)
+{
+	matricula = matri;
 }
 
 cVector<cPaciente>& cMedico::get_listapac()
@@ -78,7 +93,7 @@ cPiezaOrtopedica* cMedico::buscarprotesis()
 		}
 
 	}
-   if (aux == 0) // NO ENCONTREE LA PROTESIS EN LAS ORTOPEDIAS QUE TENGO CONVENIO
+    if (aux == 0) // NO ENCONTREE LA PROTESIS EN LAS ORTOPEDIAS QUE TENGO CONVENIO
 	{
 		cPiezaOrtopedica* encontrada = llamarANPA(cANPA::get_listatodasortopedias());
 		aux = encontrada->get_cod();
